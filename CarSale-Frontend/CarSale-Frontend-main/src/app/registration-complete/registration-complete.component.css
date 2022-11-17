@@ -1,0 +1,17 @@
+.success{
+    margin: auto;
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 22rem;
+    width: 50%;
+}
+.btn-primary{
+    border-radius: 5rem;
+    height: 4rem;
+    width: 10rem;
+}

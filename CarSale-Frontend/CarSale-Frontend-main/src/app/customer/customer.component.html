@@ -1,0 +1,137 @@
+<div class="container-fluid">
+  <h2>Customer Details</h2>
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td><label for="name">Name: </label></td>
+        <td><input id="name" type="text" formControlName="name" /></td>
+      </tr>
+
+      <tr *ngIf="name.invalid && name.touched">
+        <td id="invalid-msgs" colspan="2">
+          <small class="text-danger" *ngIf="name.errors?.required"
+            >name is Required!</small
+          >
+          <small class="text-danger" *ngIf="name.errors?.minlength"
+            >name should be min 5 chars!</small
+          >
+          <small class="text-danger" *ngIf="name.errors?.pattern"
+            >name should contain only chars!</small
+          >
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="email">Email: </label></td>
+        <td><input id="email" type="email" formControlName="email" /></td>
+      </tr>
+
+      <tr *ngIf="email.invalid && email.touched">
+        <td id="invalid-msgs" colspan="2">
+          <small class="text-danger" *ngIf="email.errors?.required"
+            >email is Required!</small
+          >
+          <small class="text-danger" *ngIf="email.errors?.email"
+            >Email not valid.</small
+          >
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="contactNo">Contact No. : </label></td>
+        <td><input id="number" type="text" formControlName="contactNo" /></td>
+      </tr>
+
+      <tr *ngIf="contactNo.invalid && contactNo.touched">
+        <td id="invalid-msgs" colspan="2">
+          <small class="text-danger" *ngIf="contactNo.errors?.required"
+            >contact No. is Required!</small
+          >
+          <small class="text-danger" *ngIf="contactNo.errors?.pattern"
+            >Contact No. is not valid</small
+          >
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="dob">Date Of Birth : </label></td>
+        <td>
+          <input
+            id="dob"
+            type="date"
+            formControlName="dob"
+            id="dob"
+            [(ngModel)]="dobYear"
+            (change)="validateDate()"
+          />
+        </td>
+      </tr>
+    </table>
+
+    <tr *ngIf="dob.invalid && dob.touched">
+      <td id="invalid-msgs" colspan="2">
+        <small class="text-danger" *ngIf="dob.errors?.required"></small>
+        <small class="text-danger">dob is Required!</small>
+      </td>
+    </tr>
+
+    <br />
+    <div formGroupName="address">
+      <h4 style="text-align: center">Address Details</h4>
+      <table>
+        <tr>
+          <td><label for="zip">Zip Code * : </label></td>
+          <td><input id="zip" type="text" formControlName="zip" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="doorNo">Door No * : </label></td>
+          <td><input id="doorNo" type="text" formControlName="doorNo" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="street">Street * : </label></td>
+          <td><input id="street" type="text" formControlName="street" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="area">Area * : </label></td>
+          <td><input id="area" type="text" formControlName="area" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="city">City * : </label></td>
+          <td><input id="city" type="text" formControlName="city" /></td>
+        </tr>
+
+        <tr>
+          <td><label for="state">State * : </label></td>
+          <td><input id="state" type="text" formControlName="state" /></td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <div class="buttons">
+      <button [disabled]="customerForm.invalid" type="submit">
+        <span> submit </span>
+      </button>
+      <button
+        [disabled]="customerForm.invalid"
+        [routerLink]="['/registration-successful']"
+      >
+        <span> get user-id </span>
+      </button>
+    </div>
+  </form>
+  <!-- <div>{{ customerForm.value | json }}  
+        {{customerForm.status}}
+   </div>
+<div *ngIf="id">{{id}}</div>
+   <button (click)="getAllCustomers()">get all customers</button>
+   <ul>
+     <li *ngFor ="let customer of customers"> {{customer.name}}</li>
+
+   </ul> -->
+  <div>*fields are necessary</div>
+</div>
+<div *ngIf="id">{{ "user id is" + id }}</div>

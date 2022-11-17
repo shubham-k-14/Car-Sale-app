@@ -1,0 +1,13 @@
+.delete{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 10%;
+}
+
+ button{
+    width: 20rem;
+    height: 5rem;
+  border-radius: 5rem;
+}

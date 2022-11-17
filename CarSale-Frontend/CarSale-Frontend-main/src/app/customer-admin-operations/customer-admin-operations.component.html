@@ -1,0 +1,99 @@
+
+<!-- <div class="search-div">
+<input type="text" id="cityName" [(ngModel)]="city" #cityName="ngModel"/>
+<button type="button" class="btn btn-primary search" (click)="onClick()"> search</button>
+</div>
+<ul *ngFor="let customer of allCustomersByLocation">
+<li>{{customer.name}}</li>
+<li>{{customer.email}}</li>
+</ul> -->
+
+
+
+
+
+
+
+
+
+
+<div class="search-div">
+  <div class="input-group">
+    <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" id="cityName" [(ngModel)]="city" #cityName="ngModel" />
+    <button type="button" class="btn btn-outline-primary" (click)="onClick()">search</button>
+  </div>
+
+  <div class="seach-table">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">user-id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">City</th>
+        </tr>
+      </thead >
+      <tbody *ngFor="let customer of allCustomersByLocation">
+        <tr>
+          <th scope="row">{{customer.userId}}</th>
+          <td>{{customer.name}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.address[0].city}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+
+  </div>
+  
+  
+  
+  </div>
+
+<div class="main">
+<div class="all-customers"><button type="button" class="btn btn-primary" (click)="showTable()">Get All customers</button>
+  <button type="button" class="btn btn-danger" (click)="closeTable()">Close table</button>
+
+</div>
+
+
+
+
+<div class="all-customers-table" *ngIf="flag">
+
+
+    <table class="table" *ngIf="!isError">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">user-id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact No.</th>
+            <th scope="col">dob</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let customer of allCustomers">
+          <tr >
+            <th scope="row" >{{customer.userId}}</th>
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.contactNo}}</td>
+            <td>{{customer.dob}}</td>
+          </tr>    
+        </tbody>
+      </table>
+
+      <div *ngIf="isError" style="margin-left:45%;">There are no records!</div>
+
+
+      
+    </div>
+  
+</div>
+
+
+      
+
+   

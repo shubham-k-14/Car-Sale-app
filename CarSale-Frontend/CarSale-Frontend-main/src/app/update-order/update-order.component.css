@@ -1,0 +1,68 @@
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 34%;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+    padding: 2rem;
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+    
+    .container-fluid:hover{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: all 0.5s ease;
+    }
+    
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+        transition: all .35s;
+    }
+    
+    button{
+        width: 100px;
+        height: 34px;
+        line-height: 25px;
+        font-size: 18px;
+        font-family: sans-serif;
+        text-decoration: none;
+        color: #333;
+        border: 2px solid #333;
+        letter-spacing: 2px;
+        text-align: center;
+        position: relative;
+        transition: all .35s;
+      }
+    
+    button span{
+        position: relative;
+        z-index: 2;
+      }
+    
+    button:after{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #007bff;
+        transition: all .35s;
+      }
+      
+      button:hover{
+        color: #fff;
+      }
+      
+      button:hover:after{
+        width: 100%;
+      }
+    
+    
+      table tr td{
+          padding:10px;
+      }
+   

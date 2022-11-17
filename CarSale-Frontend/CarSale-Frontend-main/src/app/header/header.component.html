@@ -1,0 +1,64 @@
+<div class="header">
+  <nav>
+    <img src="../assets/logo.png" class="logo" routerLink="" />
+
+    <ul class="nav-links">
+      <li>
+        <a href=""><b>SHOW CARS</b></a>
+      </li>
+      <li>
+        <a href=""> <b>BY BRAND</b></a>
+      </li>
+      <li>
+        <a href=""><b>BY CITY</b></a>
+      </li>
+      <li>
+        <a href=""><b>BY MODEL</b></a>
+      </li>
+      <li>
+        <a href=""><b>ABOUT US</b></a>
+      </li>
+      <li *ngIf="!this.userService.isLoggedIn()">
+        <button
+          class="btn btn btn-outline-dark my-2 my-sm-0"
+          routerLink="/sign-in"
+        >
+          Sign In
+        </button>
+      </li>
+      <li class="dropdown" *ngIf="this.userService.isLoggedIn()">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenu2"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Welcome User
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button
+            class="dropdown-item"
+            routerLink="/customer-home"
+            type="button"
+            *ngIf="service.isAdminLoggedIn"
+          >
+            Home
+          </button>
+          <button
+            class="dropdown-item"
+            routerLink="/customer-profile"
+            type="button"
+            *ngIf="service.isAdminLoggedIn"
+          >
+            Profile
+          </button>
+          <button class="dropdown-item" (click)="logout()" type="button">
+            Logout
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>

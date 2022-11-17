@@ -1,0 +1,52 @@
+.btn-primary ,.btn-danger{
+    
+    width: 43%;
+    height: 3rem;
+
+    
+}
+.all-customers{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+   
+   
+}
+
+.all-customers-table{
+    margin: 3rem;
+}
+
+.search{
+    width: 7rem;
+    height: 2rem;
+    border-radius: 5rem;
+}
+.search-div{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+    width: 30%;
+    margin: 3rem 35%;
+}
+
+.btn-outline-primary{
+    margin-left: 2rem;
+    border-radius: 3rem;
+}
+
+.main{
+    margin: 3rem;
+}
+
+.seach-table{
+    width: 292%;
+    margin-top: 2rem;
+}
+
+
+
+
+
+

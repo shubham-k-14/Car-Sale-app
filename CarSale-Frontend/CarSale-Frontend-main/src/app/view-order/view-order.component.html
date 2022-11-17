@@ -1,0 +1,30 @@
+<p>view-order works!</p>
+
+<div class="container">
+  <h2>Order List</h2>
+  <p>Use action to perform crud operations</p>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">orderId</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Billing_Date</th>
+          <th scope="col">Customer_id</th>
+          <th scope="col">payment_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.amount }}</td>
+          <td>{{ order.billingDate }}</td>
+          <td>101</td>
+          <td>201</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" (click)="gotolist()"><span> BACK </span></button>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<h2 style="text-align: center;">Appointment List</h2>
+<div class="row justify-content-center">
+<div class="col-auto">
+    <table class="table table-bordered">
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>City</th>
+                    <th>Inspection Location</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            <tr *ngFor ="let appointmentModel of appointmentsModel">
+                <td>{{appointmentModel.appointmentId}}</td>
+                <td>{{appointmentModel.location}}</td>
+                <td>{{appointmentModel.inspectionType}}</td>
+                <td>{{appointmentModel.preferredDate}}</td>
+                <td>{{appointmentModel.preferredTime}}</td>
+                 <td>
+                    <button (click)="updateAppointment(appointmentModel.appointmentId,'user')" 
+                    class="btn btn-primary">Change Details</button>
+                </td>
+                <td>
+                    <button (click)="deleteAppointment(appointmentModel.appointmentId)" 
+                    class="btn btn-danger" style="margin-left: 10px">Cancel Appointment</button>
+                </td> 
+            </tr>
+</table>
+<button (click)="AddAppointment()" class="btn btn-primary" style="margin-left: 10px">
+    Add Appointments</button>
+
+<!-- <button (click)="OpenAppointment()" class="btn btn-primary" style="margin-left: 10px">
+        Home Appointments</button>   -->
+<!-- <button (click)="goBackToDashboard()" class="btn btn-primary" style="margin-left: 10px">
+            Go Back to AdminDashboard</button>   -->
+</div>
+</div>
+

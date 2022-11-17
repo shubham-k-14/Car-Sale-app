@@ -1,0 +1,72 @@
+
+h1{
+    color: white;
+}
+
+.typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid  #007bff;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 78% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: #007bff; 
+    }
+}
+
+.content{
+    position:absolute;
+    left: 50%;
+    top:50%;
+    width:90%;
+    max-width: 900px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.sign-up-in{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+
+}
+.sign-up-in button{
+    width: 200px;
+    height: 80px;
+    border-radius: 3rem;
+}
+
+.video-section{
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}

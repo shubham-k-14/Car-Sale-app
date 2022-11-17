@@ -1,0 +1,19 @@
+<h2 style="text-align: center;">Appointment List</h2>
+<div class="row justify-content-center">
+<div class="col-auto">
+    <table class="table table-bordered">
+                <tr>
+                    <th>City</th>
+                    <th>Inspection Location</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                </tr>
+            <tr *ngFor ="let appointmentModel of appointmentsModel">
+                <td>{{appointmentModel.location}}</td>
+                <td>{{appointmentModel.inspectionType}}</td>
+                <td>{{appointmentModel.preferredDate}}</td>
+                <td>{{appointmentModel.preferredTime}}</td>
+            </tr>
+</table>
+</div>
+</div>>

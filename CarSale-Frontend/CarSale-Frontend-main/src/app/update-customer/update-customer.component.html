@@ -1,0 +1,82 @@
+<p>update page</p>
+
+<div class="container-fluid">
+    <h2>Update Customer Details</h2>
+   <form (ngSubmit)="onSubmit()">
+    <table>
+    <tr><td><label for="name">Name: </label></td>
+   <td><input id="name" type="text" name="name" [(ngModel)]="customer.name" /></td></tr>
+
+  
+
+  
+
+
+
+   <tr><td><label for="email">Email: </label></td>
+    <td><input id="email" type="email" name="email" [(ngModel)]="customer.email" ></td></tr>
+
+
+    
+
+
+    <tr><td><label for="contactNo">Contact No. : </label></td>
+    <td><input id="number" type="text" name="contactNo" [(ngModel)]="customer.contactNo"></td></tr> 
+
+
+    
+
+    <tr><td><label for="dob">Date Of Birth : </label></td>
+    <td><input id="dob" type="date" name="dob" [(ngModel)]="customer.dob"></td></tr></table>
+
+    
+     
+  
+    <br/>
+    <div>
+      <h4 style="text-align: center">Update Address Details</h4>
+      <table ngModelGroup="address">
+
+      <tr><td><label for="zip" >Zip Code * : </label></td>
+        <td ><input  id="zip" type="text" name="pincode" [(ngModel)]="customer.address[0].pincode"></td></tr>
+          
+
+        <tr><td><label for="doorNo">Door No * : </label></td>
+          <td><input id="doorNo" type="text" name="doorNo"  [(ngModel)]="customer.address[0].doorNo" ></td></tr>
+
+          <tr><td><label for="street">Street * : </label></td>
+            <td><input id="street" type="text" name="street" [(ngModel)]="customer.address[0].street"></td></tr>
+
+          <tr><td><label for="area">Area * : </label></td>
+          <td><input id="area" type="text" name="area" [(ngModel)]="customer.address[0].area" ></td></tr>
+
+      <tr><td><label for="city">City * : </label></td>
+      <td><input id="city" type="text" name="city" [(ngModel)]="customer.address[0].city" ></td></tr>
+    
+      <tr><td><label for="state">State * : </label></td>
+      <td><input id="state" type="text" name="state" [(ngModel)]="customer.address[0].state"></td></tr>
+    </table>
+
+    </div>
+    <br />
+    <div class="buttons">
+    <button  type="submit"><span> Save Changes </span></button>
+  </div>
+   
+   </form>
+   <!-- <div>{{ customerForm.value | json }}  
+        {{customerForm.status}}
+   </div>
+<div *ngIf="id">{{id}}</div>
+   <button (click)="getAllCustomers()">get all customers</button>
+   <ul>
+     <li *ngFor ="let customer of customers"> {{customer.name}}</li>
+
+   </ul> -->
+</div>
+
+<app-footer></app-footer>
+
+  
+
+

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <h2>Appointment Details</h2>
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td><label for="location">City Location: </label></td>
+                <td><input id="location" type="text" formControlName="location" pattern="[a-zA-Z]{0,20}"
+                        [class.is-invalid]="location.invalid && location.touched"
+                        [(ngModel)]="appointmentmodel.location">
+                </td>
+            </tr>
+            <div *ngIf="location.invalid && location.touched">
+                <small class="text-danger" *ngIf="location.errors?.required">City Location is Required!</small>
+                <small class="text-danger" *ngIf="location.errors?.minlength">City Location should be min 3 chars
+                    !</small>
+                <small class="text-danger" *ngIf="location.errors?.pattern">City Location should contain only chars
+                    !</small>
+            </div>
+            <tr>
+                <td><label for="inspectionType">Select your preferred location for inspection: </label></td>
+                <td><select name="inspectionType" id="inspectionType" formControlName="inspectionType"
+                        [class.is-invalid]="inspectionType.invalid && inspectionType.touched"
+                        [(ngModel)]="appointmentmodel.inspectionType">
+                        <option value="Home">Home</option>
+                        <option value="Show Room">Show Room</option>
+                    </select>
+                </td>
+            </tr>
+            <div *ngIf="inspectionType.invalid && inspectionType.touched">
+                <small class="text-danger" *ngIf="inspectionType.errors?.required">
+                    inspectionType is Required!</small>
+            </div>
+            <tr>
+                <td><label for="preferredDate">Select preferred date: </label></td>
+                <td><input id="preferredDate" type="date" min="{{minDate}}" [(ngModel)]="appointmentmodel.preferredDate"
+                        formControlName="preferredDate"
+                        [class.is-invalid]="preferredDate.invalid && preferredDate.touched"></td>
+            </tr>
+            <div *ngIf="preferredDate.invalid && preferredDate.touched">
+                <small class="text-danger" *ngIf="preferredDate.errors?.required">preferredDate is Required!</small>
+            </div>
+            <tr>
+                <td><label for="preferredTime">Select preferred time(HH:mm) format: </label></td>
+                <td><input id="preferredTime" type="time" [(ngModel)]="userTime" (change)="getTime()"
+                        formControlName="preferredTime" [(ngModel)]="appointmentmodel.preferredTime"></td>
+            </tr>
+            <div *ngIf="preferredTime.invalid && preferredTime.touched">
+                <small class="text-danger" *ngIf="preferredTime.errors?.required">
+                    preferredTime is Required!</small>
+            </div>
+        </table>
+        <br />
+        <br />
+        <div class="buttons">
+            <button [disabled]="appointmentForm.invalid" type="submit" class="btn btn-primary"> <span>next
+                </span></button>
+        </div>
+
+    </form>
+    <div>{{ appointmentForm.value | json }}</div>
+</div>
+
+<app-footer></app-footer>
